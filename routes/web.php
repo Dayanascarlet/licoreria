@@ -48,8 +48,13 @@ Route::get('/cliente/create','ClienteController@create')->name('cliente.create')
 Route::post('/cliente/store','ClienteController@store')->name('cliente.store');
 Route::get('/cliente/edit/{cli_id}','ClienteController@edit')->name('cliente.edit');
 Route::post('cliente/update/{cli_id}','ClienteController@update')->name('cliente.update');
-Route::post('cliente/destroy/{cli_id}','ClienteController@destroy')->name('cliente.destroy'); 
+Route::post('cliente/destroy/{cli_id}','ClienteController@destroy')->name('cliente.destroy');
+
+Route::post('/factura_detalle','FacturaController@detalle')->name('factura.detalle');
+
+Route::resource('factura','FacturaController'); 
  
+ Route::get('/factura_pdf/{fac_id}','FacturaController@factura_pdf')->name('factura.pdf');;
 
 
 

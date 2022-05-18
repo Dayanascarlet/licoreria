@@ -13,22 +13,19 @@ class FacturaTable extends Migration
      */
     public function up()
     {
-        //
-                Schema::create('factura', function (Blueprint $table) {
+         Schema::create('factura', function (Blueprint $table) {
             $table->id('fac_id');
-            $table->string('pro_nombre');
-            $table->string('fac_cantidad');
-            $table->string('fac_detalle');
-            $table->string('fac_iva');
-            $table->string('fac_total');
-                 $table->foreignId('prov_id')->references('prov_id')->on('proveedor');
-                 $table->foreignId('usu_id')->references('usu_id')->on('users');
-                 $table->foreignId('pro_id')->references('pro_id')->on('producto');
-          
-           
-           
+            $table->foreignId('cli_id')->references('cli_id')->on('cliente');
+            $table->string('fac_no');
+            $table->date('fac_fecha');
+            $table->float('fac_total');
+            $table->float('fac_iva');
+            $table->string('fac_tipo_pago');///Trasferencia Efectivo Tarjeta
+            $table->float('fac_descuento');///porcentage
+            $table->string('fac_observaciones')->nullable();
            
         });
+    
     }
 
     /**
