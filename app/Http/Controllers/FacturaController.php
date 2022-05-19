@@ -37,7 +37,8 @@ class FacturaController extends Controller
         ->with('producto',$producto)
         ;
     }
-      public function detalle(Request $req){
+      public function detalle(Request $req)
+      {
          $datos=$req->all();
          $fac_id=$datos['fac_id'];
          
@@ -51,7 +52,7 @@ class FacturaController extends Controller
                 Detalle::destroy($fad_id);    
 
          }
-       return redirect(route('facturas.edit',$fac_id));
+       return redirect(route('factura.edit',$fac_id));
     }
 
     /**
@@ -62,7 +63,9 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data=$request->all();
+        $factura=Factura::create($data);
+        return redirect(route('factura.edit',$factura->fac_id));
     }
 
     /**
@@ -84,7 +87,18 @@ class FacturaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $factura=Factura::find($id);
+        $cliente=DB::select("SELECT * from cliente");
+        $producto=DB::select("SELECT * from producto");
+        $detalle=DB::select("SELECT * FROM factura_detalle fd 
+                             JOIN producto p ON fd.pro_id=p.pro_id  
+                             WHERE fd.fac_id=$id");
+        return view('factura.edit')
+        ->with('factura',$factura)
+        ->with('cliente',$cliente)
+        ->with('producto',$producto)
+        ->with('detalle',$detalle)
+        ;
     }
 
     /**
@@ -109,4 +123,42 @@ class FacturaController extends Controller
     {
         //
     }
+public function detalle (Request $req){
+         $datos=$req->all();
+         $fac_id=$datos['fac_id'];
+         
+         if(isset($datos['btn_detalle'])=='btn_detalle'){
+                ///GUARDO EL DETALLE 
+           Detalle::create($datos);
+         }
+         if(isset($datos['btn_eliminar'])>0){
+                ///ELIMINO EL DETALLE    
+                $fad_id=$datos['btn_eliminar'];
+                Detalle::destroy($fad_id);    
+
+         }
+       return redirect(route('factura.edit',$fac_id));
+    }
+
+    public function facturas_pdf($fac_id){
+        
+        $factura=DB::select("
+            SELECT * FROM factura f
+            JOIN clientes c ON c.cli_id=f.cli_id
+            WHERE f.fac_id=$fac_id ");
+
+        $detalle=DB::select("SELECT * FROM factura_detalle d 
+                   JOIN producto p ON p.pro_id=d.pro_id
+                   WHERE d.fac_id=$fac_id 
+            ");
+
+        $pdf = PDF::loadView('factura.pdf',[ 'factura'=>$factura[0],'detalle'=>$detalle ]);
+        return $pdf->stream('factura.pdf');
+
+
+
+
+    }
+
 }
+

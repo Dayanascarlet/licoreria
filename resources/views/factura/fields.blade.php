@@ -106,7 +106,7 @@ if(isset($factura)){
 				<select name="pro_id" id="pro_id" style="width:400px" class="form-control" >
 					<option value="">--Elija un producto--</option>
 					@foreach($producto as $p)
-					   <option value="{{$p->pro_id}}">{{$p->pro_dnombre}}</option>
+					   <option value="{{$p->pro_id}}">{{$p->pro_nombre}}</option>
 					@endforeach
 				</select>
 			</td>
@@ -124,7 +124,8 @@ if(isset($factura)){
 	   <?php 
 	      $subt=0;
 	   ?>
-	         @foreach($detalle as $dt)
+	         @foreach($detalle as
+	         + $dt)
 	         <?php $subt+=$dt->fad_vt;?>
 	            <tr>
 	            	<td>{{$loop->iteration}}</td>
