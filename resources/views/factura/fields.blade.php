@@ -125,12 +125,12 @@ if(isset($factura)){
 	      $subt=0;
 	   ?>
 	         @foreach($detalle as
-	         + $dt)
+	          $dt)
 	         <?php $subt+=$dt->fad_vt;?>
 	            <tr>
 	            	<td>{{$loop->iteration}}</td>
 	            	<td>{{$dt->fad_cantidad}}</td>
-	            	<td>{{$dt->pro_descripcion}}</td>
+	            	<td>{{$dt->pro_nombre}}</td>
 	            	<td class="text-right">{{number_format($dt->fad_vu,2)}}$</td>
 	            	<td class="text-right">{{number_format($dt->fad_vt,2)}}$</td>
 	            	<td>
@@ -161,7 +161,9 @@ if(isset($factura)){
         <tr><th colspan="5" class="alert alert-warning">No existen datos</th></tr>
         @endisset
 
+
 	</table>
+	<a class="btn btn-dark" href="{{route('factura.index')}}">Guardar factura</a> 
 </form>
 <script>
 window.onload = function(){

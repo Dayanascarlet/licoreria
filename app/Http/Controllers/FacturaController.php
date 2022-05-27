@@ -17,7 +17,7 @@ class FacturaController extends Controller
      */
     public function index()
     {
-          $factura=Factura::all();
+          $factura=DB::select("select * from factura join cliente on factura.cli_id=cliente.cli_id");
         return view('factura.index')
         ->with('factura',$factura);
     }
@@ -123,28 +123,13 @@ class FacturaController extends Controller
     {
         //
     }
-public function detalle (Request $req){
-         $datos=$req->all();
-         $fac_id=$datos['fac_id'];
-         
-         if(isset($datos['btn_detalle'])=='btn_detalle'){
-                ///GUARDO EL DETALLE 
-           Detalle::create($datos);
-         }
-         if(isset($datos['btn_eliminar'])>0){
-                ///ELIMINO EL DETALLE    
-                $fad_id=$datos['btn_eliminar'];
-                Detalle::destroy($fad_id);    
 
-         }
-       return redirect(route('factura.edit',$fac_id));
-    }
 
-    public function facturas_pdf($fac_id){
+    public function factura_pdf($fac_id){
         
         $factura=DB::select("
             SELECT * FROM factura f
-            JOIN clientes c ON c.cli_id=f.cli_id
+            JOIN cliente c ON c.cli_id=f.cli_id
             WHERE f.fac_id=$fac_id ");
 
         $detalle=DB::select("SELECT * FROM factura_detalle d 

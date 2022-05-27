@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <center>
+	<script src="{{asset('js/usuarios.js')}}"></script>
 <h2 class="bg-white text-black">Lista de usuarios</h2>
 <a class="btn btn-success" href="{{route('usuarios.create')}}" >NUEVO</a>
 </center>

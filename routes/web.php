@@ -51,10 +51,23 @@ Route::post('cliente/update/{cli_id}','ClienteController@update')->name('cliente
 Route::post('cliente/destroy/{cli_id}','ClienteController@destroy')->name('cliente.destroy');
 
 Route::post('/factura_detalle','FacturaController@detalle')->name('factura.detalle');
-
 Route::resource('factura','FacturaController'); 
- 
- Route::get('/factura_pdf/{fac_id}','FacturaController@factura_pdf')->name('factura.pdf');;
+Route::get('/factura_pdf/{fac_id}','FacturaController@factura_pdf')->name('factura.pdf');
+
+
+Route::get('/reporte','ReporteController@index')->name('reporte');
+Route::post('/reporte/search','ReporteController@search')->name('reporte.search');
+Route::get('/reporte_pdf/{rep_id}','ReporteController@reporte_pdf')->name('reporte.pdf');
+
+
+
+
+
+
+
+
+
+
 
 
 
