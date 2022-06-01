@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{asset('js/proveedor.js')}}"></script>
 <center>
   <h4 class="bg-dark text-white ">REGISTRO DE PROVEEDORES</h4>
   </center>
-  <form action="{{route('proveedor.store')}}" method="POST" >
+  <form action="{{route('proveedor.store')}}" method="POST" onsubmit=" return validar()" >
     @csrf
  <div class="mb-3 row">
     <label   for="staticNombre" class="col-sm-2 col-form-label">Nombre</label>
@@ -31,7 +32,7 @@
     </div>
   </div>
   
-  <button class="btn btn-success">Guardar</button> 
+  <button type="submit" class="btn btn-success">Guardar</button> 
 </form> 
         
   @endsection

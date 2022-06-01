@@ -1,22 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{asset('js/usuarios.js')}}"></script>
 <center>
 	<h4 class="bg-dark text-white ">REGISTRO DE USUARIOS</h4>
 	</center>
-	<form action="{{route('usuarios.store')}}" method="POST" >
+	<form action="{{route('usuarios.store')}}" method="POST" onsubmit=" return validar()">
 		@csrf
  <div class="mb-3 row">
     <label   for="staticNombre" class="col-sm-2 col-form-label">Nombre</label>
     <div class="col-sm-10">
-      <input type="text" name="usu_nombre"  id="usu_nombre" class=" @error('usu_nombre') is-invalid @enderror" name="usu_nombre" value="{{ old('usu_nombre') }}" required autocomplete="email" autofocus>
+      <input type="text" name="usu_nombre"  id="usu_nombre" >
 
 
-                  @error('usu_nombre')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
     </div>
   </div>
     <div class="mb-3 row">
@@ -34,7 +30,7 @@
     <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input   type="text" name="email" id="email">
+      <input   type="email" name="email" id="email">
     </div>
   </div>
   <div class="mb-3 row">
@@ -43,7 +39,7 @@
       <input  type="password" name="password"  id="password">
     </div>
   </div>
-  <button class="btn btn-success">Guardar</button> 
+  <button type="submit" class="btn btn-success">Guardar</button> 
 </form> 
         
 	@endsection

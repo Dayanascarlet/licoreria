@@ -1,6 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
+<script src="{{asset('js/producto.js')}}"></script>
 <h4 class="bg-dark-write">REGITRO DE PROVEEDORES</h4>
 <form action="{{route('producto.update',$producto->pro_id)}}" method="POST">
   @csrf
@@ -23,6 +24,7 @@
                     
                      
                      @foreach($proveedor as $p)
+                   
                          <option  value="{{$p->prov_id}}" >{{$p->prov_nombre}}</option>
                      @endforeach
                   </select>
@@ -30,6 +32,6 @@
             </div>
   
 
-  <button class="btn btn-success">Guardar</button> 
+  <button  type="submit" class="btn btn-success">Guardar</button> 
 </form>
 @endsection

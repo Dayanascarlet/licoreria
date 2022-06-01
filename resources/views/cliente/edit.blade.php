@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<script src="{{asset('js/cliente.js')}}"></script>
 <h4 class="bg-dark-write">REGITRO DE CLIENTES</h4>
-<form action="{{route('cliente.update',$cliente->cli_id)}}" method="POST">
+<form action="{{route('cliente.update',$cliente->cli_id)}}" method="POST" onsubmit=" return validar()">
 	@csrf
   
 	  <div class="mb-3 row">
@@ -13,7 +14,7 @@
     <div class="mb-3 row">
     <label  for="staticApellido" class="col-sm-2 col-form-label">Apellido</label>
     <div class="col-sm-10">
-      <input value="{{$cliente->cli_apellido}}" type="text" name="cli_apellido" id="cli_pellido">
+      <input value="{{$cliente->cli_apellido}}" type="text" name="cli_apellido" id="cli_apellido">
     </div>
   </div>
     <div class="mb-3 row">
@@ -36,6 +37,6 @@
   </div>
   
 
-  <button class="btn btn-success">Guardar</button> 
+  <button type="submit" class="btn btn-success">Guardar</button> 
 </form>
 @endsection

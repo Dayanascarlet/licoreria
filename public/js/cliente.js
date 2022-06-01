@@ -1,11 +1,11 @@
 const validar=()=>{
-const usu_nombre=document.querySelector('#usu_nombre');
-const usu_apellido=document.querySelector('#usu_apellido');
-const usu_cedula=document.querySelector('#usu_cedula');
-const email=document.querySelector('#email');
-const password=document.querySelector('#password');
+const cli_nombre=document.querySelector('#cli_nombre');
+const cli_apellido=document.querySelector('#cli_apellido');
+const cli_cedula=document.querySelector('#cli_cedula');
+const cli_email=document.querySelector('#cli_email');
+const cli_telefono=document.querySelector('#cli_telefono');
 
-if(usu_nombre.value.length==0){
+if(cli_nombre.value.length==0){
 	Swal.fire({
 		icon: 'error',
 		title:'ERROR',
@@ -13,7 +13,7 @@ if(usu_nombre.value.length==0){
 	});
 	return false;
      }
-if(usu_apellido.value.length==0){
+if(cli_apellido.value.length==0){
 	Swal.fire({
 		icon: 'error',
 		title:'ERROR',
@@ -22,7 +22,7 @@ if(usu_apellido.value.length==0){
 	return false;
      }
 
-     if(usu_cedula.value.length==0){
+     if(cli_cedula.value.length==0){
 	Swal.fire({
 		icon: 'error',
 		title:'ERROR',
@@ -30,7 +30,7 @@ if(usu_apellido.value.length==0){
 	});
 	return false;
      }
-          if(email.value.length==0){
+          if(cli_email.value.length==0){
 	Swal.fire({
 		icon: 'error',
 		title:'ERROR',
@@ -38,11 +38,11 @@ if(usu_apellido.value.length==0){
 	});
 	return false;
      }
-              if(password.value.length==0){
+            if(cli_telefono.value.length==0){
 	Swal.fire({
 		icon: 'error',
 		title:'ERROR',
-		text:'El campo password es obligatorio'
+		text:'El campo telefono es obligatorio'
 	});
 	return false;
      }

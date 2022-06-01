@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<script src="{{asset('js/proveedor.js')}}"></script>
 <h4 class="bg-dark-write">REGITRO DE PROVEEDORES</h4>
-<form action="{{route('proveedor.update',$proveedor->prov_id)}}" method="POST">
+<form action="{{route('proveedor.update',$proveedor->prov_id)}}" method="POST" onsubmit=" return validar()">
 	@csrf
   
 	  <div class="mb-3 row">
@@ -19,17 +20,17 @@
     <div class="mb-3 row">
     <label  for="staticCedula" class="col-sm-2 col-form-label">Cedula</label>
     <div class="col-sm-10">
-      <input value="{{$proveedor->prov_cedula}}" type="text" name="prov_cedula"  id="prov_cedula">
+      <input value="{{$proveedor->prov_cedula}}" type="number" name="prov_cedula"  id="prov_cedula">
     </div>
   </div>
 	  <div class="mb-3 row">
     <label for="staticRuc" class="col-sm-2 col-form-label">Ruc</label>
     <div class="col-sm-10">
-      <input value="{{$proveedor->prov_ruc}}"  type="text" name="prov_ruc" id="prov_ruc">
+      <input value="{{$proveedor->prov_ruc}}"  type="number" name="prov_ruc" id="prov_ruc">
     </div>
   </div>
   
 
-  <button class="btn btn-success">Guardar</button> 
+  <button  type="submit" class="btn btn-success">Guardar</button> 
 </form>
 @endsection

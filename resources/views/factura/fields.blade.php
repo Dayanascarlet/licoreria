@@ -1,3 +1,5 @@
+
+<script src="{{asset('js/factura.js')}}"></script>
 <?php 
 if(isset($factura)){
      $fac_id=$factura->fac_id;
@@ -23,7 +25,7 @@ if(isset($factura)){
      $fac_observaciones="";
 }
 ?>
-<form action="{{route('factura.store')}}" method="POST">
+<form action="{{route('factura.store')}}" method="POST" onsubmit=" return validar()">
 	@csrf
 	<div class="row">
 		<div class="col-md-3">

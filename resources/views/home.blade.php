@@ -21,7 +21,7 @@
         <div class="card-body">
           <h5 class="card-title">Norteño</h5>
           <p class="card-text">5.50</p>
-          <a href="#" class="btn btn-primary">𝕮𝖔𝖒𝖕𝖗𝖆𝖗</a>
+          
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="card-body">
           <h5 class="card-title">Trópico seco</h5>
           <p class="card-text">10.00</p>
-          <a href="#" class="btn btn-primary">𝕮𝖔𝖒𝖕𝖗𝖆𝖗</a>
+          
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
         <div class="card-body">
           <h5 class="card-title">Caña manabita </h5>
           <p class="card-text">12.00</p>
-          <a href="#" class="btn btn-primary">𝕮𝖔𝖒𝖕𝖗𝖆𝖗</a>
+          
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
         <div class="card-body">
           <h5 class="card-title">pajaro azul</h5>
           <p class="card-text">10.50</p>
-          <a href="#" class="btn btn-primary">𝕮𝖔𝖒𝖕𝖗𝖆𝖗</a>
+          
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
         <div class="card-body">
           <h5 class="card-title">Aguardiente antioqueño</h5>
           <p class="card-text">17.50</p>
-          <a href="#" class="btn btn-primary">𝕮𝖔𝖒𝖕𝖗𝖆𝖗</a>
+          
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
         <div class="card-body">
           <h5 class="card-title">Zhumir durazno</h5>
           <p class="card-text">9.50</p>
-          <a href="#" class="btn btn-primary">𝕮𝖔𝖒𝖕𝖗𝖆𝖗</a>
+          
         </div>
       </div>
     </div>

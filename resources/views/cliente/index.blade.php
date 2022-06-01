@@ -4,6 +4,7 @@
 <h2 class="bg-white text-black">Lista de cliente</h2>
 <a class="btn btn-success" href="{{route('cliente.create')}}" >NUEVO</a>
 </center>
+
 	<table class="table">
 		<th> # </th>
 		<th> Nombre </th>

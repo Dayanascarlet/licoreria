@@ -7,6 +7,7 @@
          Desde:<input type="date" name="desde" value="{{$desde}}"> 
          Hasta:<input type="date" name="hasta" value="{{$hasta}}">
          <button class="btn btn-success"  type="submit" name="btn_buscar">Buscar</button>
+       
          <button class="btn btn-danger" type="submit" value ="0" name="btn_pdf">PDF</button>
       </form>
 <div class="container">

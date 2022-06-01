@@ -98,4 +98,6 @@ class ClienteController extends Controller
          cliente::destroy($id);
         return redirect(route('cliente'));
     }
+
+    
 }

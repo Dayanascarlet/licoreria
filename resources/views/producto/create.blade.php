@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<script src="{{asset('js/productos.js')}}"></script>
+<script src="{{asset('js/producto.js')}}"></script>
 <center><h4 class="bg-dark-write">Formulario de Productos</h4></center>
 <form action="{{route('producto.store')}}" method="POST" onsubmit="return validar()">
   @csrf
@@ -12,10 +12,6 @@
                 <input type="text" class='form-control' id='pro_nombre'name="pro_nombre">
             </div>
 
-             <div class="col-md-6">
-                <label for="">CATEGORIA</label>
-                <input type="text" class='form-control' id='pro_categoria'name="pro_categoria">
-            </div>
 
              <div class="col-md-6">
                 <label for="">PRECIO</label>
